@@ -266,8 +266,11 @@ LRESULT CCandidateWindow::HandleMessage(UINT msg, WPARAM wParam, LPARAM lParam) 
             if (y < 1 + headerHeight) return 0;
             size_t row = static_cast<size_t>(y - 1 - headerHeight) /
                          static_cast<size_t>(_rowHeight);
-            size_t index = PageStart() + row;
-            if (index < _items.size() && OnItemClicked) OnItemClicked(index);
+            // 表示中ページの行数を超える位置 (下端の境界付近) は候補として扱わない
+            // (次ページの見えていない候補を確定してしまうのを防ぐ)。
+            size_t start = PageStart();
+            size_t rows = (std::min)(kPageSize, _items.size() - start);
+            if (row < rows && OnItemClicked) OnItemClicked(start + row);
             return 0;
         }
         case WM_MOUSEACTIVATE:

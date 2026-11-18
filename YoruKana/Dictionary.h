@@ -6,7 +6,7 @@
 
 namespace YoruKana {
 
-// ===== 1. 内蔵辞書 (Android版 Dictionary.java の移植) =====
+// ===== 1. 内蔵辞書 (Android版 Dictionary.kt の移植) =====
 // DictionaryData の明示エントリに加え、動詞・形容詞の活用形を生成して登録する。
 // 読み → 候補リスト のマップとして保持する。
 class Dictionary {
@@ -20,7 +20,7 @@ public:
     // 前方一致する読みの一覧 (予測変換用)
     std::vector<std::wstring> ReadingsWithPrefix(const std::wstring& prefix) const;
 
-    // 登録されている読みの総数 (辞書語数)。Android版と同じ 3502 になる。
+    // 登録されている読みの総数 (辞書語数)。Android版と同じ 3408 になる。
     size_t Size() const { return _map.size(); }
 
 private:

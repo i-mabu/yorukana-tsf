@@ -9,7 +9,7 @@
 
 namespace YoruKana {
 
-// ENTRIES: 1102 件
+// ENTRIES: 1089 件
 inline const std::vector<std::wstring>& kEntries() {
     static const std::vector<std::wstring> data = {
         L"おはよう=お早う,おはよう",
@@ -124,7 +124,6 @@ inline const std::vector<std::wstring>& kEntries() {
         L"おととし=一昨年",
         L"さらいねん=再来年",
         L"まいつき=毎月",
-        L"まいにち=毎日",
         L"ごぜん=午前",
         L"ごご=午後",
         L"まよなか=真夜中",
@@ -359,7 +358,6 @@ inline const std::vector<std::wstring>& kEntries() {
         L"おい=甥",
         L"めい=姪",
         L"かれし=彼氏",
-        L"ともだち=友達",
         L"しんゆう=親友",
         L"なかま=仲間",
         L"てき=敵",
@@ -729,7 +727,6 @@ inline const std::vector<std::wstring>& kEntries() {
         L"ばんごう=番号",
         L"ねんだい=年代",
         L"ねん=年",
-        L"つき=月",
         L"にち=日",
         L"しゅう=週",
         L"じ=時",
@@ -778,7 +775,6 @@ inline const std::vector<std::wstring>& kEntries() {
         L"みなみ=南",
         L"きた=北",
         L"まんなか=真ん中",
-        L"あいだ=間",
         L"むこう=向こう",
         L"てまえ=手前",
         L"おく=奥",
@@ -898,7 +894,6 @@ inline const std::vector<std::wstring>& kEntries() {
         L"げんいん=原因",
         L"えいきょう=影響",
         L"かんけい=関係",
-        L"しゃかい=社会",
         L"せいじ=政治",
         L"けいざい=経済",
         L"ぶんか=文化",
@@ -912,10 +907,8 @@ inline const std::vector<std::wstring>& kEntries() {
         L"はってん=発展",
         L"しんぽ=進歩",
         L"せいちょう=成長",
-        L"れんしゅう=練習",
         L"けいけん=経験",
         L"ちしき=知識",
-        L"じょうほう=情報",
         L"いけん=意見",
         L"かんがえ=考え",
         L"きもち=気持ち",
@@ -1020,7 +1013,6 @@ inline const std::vector<std::wstring>& kEntries() {
         L"ぞんじる=存じる",
         L"もの=物,者",
         L"こと=事,こと",
-        L"とき=時",
         L"ところ=所,ところ",
         L"ほう=方",
         L"ため=為,ため",
@@ -1047,8 +1039,6 @@ inline const std::vector<std::wstring>& kEntries() {
         L"むら=村",
         L"けん=県,件,券",
         L"しゅと=首都",
-        L"ちゅうしん=中心",
-        L"きた=北",
         L"かいがい=海外",
         L"こくさい=国際",
         L"がいこく=外国",
@@ -1092,8 +1082,6 @@ inline const std::vector<std::wstring>& kEntries() {
         L"ほーむ=ホーム",
         L"せんろ=線路",
         L"しゃりょう=車両",
-        L"うんてん=運転",
-        L"うんてんしゅ=運転手",
         L"じこ=事故",
         L"じゅうたい=渋滞",
         L"ちえん=遅延",
@@ -1102,7 +1090,6 @@ inline const std::vector<std::wstring>& kEntries() {
         L"きゅうこう=急行",
         L"とっきゅう=特急",
         L"かいそく=快速",
-        L"ふつう=普通",
         L"しんかんせん=新幹線",
         L"ちかてつ=地下鉄",
         L"もにれーる=モノレール",
@@ -1118,7 +1105,7 @@ inline const std::vector<std::wstring>& kEntries() {
     return data;
 }
 
-// GODAN: 120 件
+// GODAN: 119 件
 inline const std::vector<std::wstring>& kGodan() {
     static const std::vector<std::wstring> data = {
         L"かく|書く",
@@ -1200,7 +1187,6 @@ inline const std::vector<std::wstring>& kGodan() {
         L"ふせぐ|防ぐ",
         L"つなぐ|繋ぐ",
         L"あるく|歩く",
-        L"あそぶ|遊ぶ",
         L"いたむ|痛む",
         L"うらむ|恨む",
         L"かむ|噛む",
@@ -1245,7 +1231,7 @@ inline const std::vector<std::wstring>& kGodan() {
     return data;
 }
 
-// ICHIDAN: 72 件
+// ICHIDAN: 71 件
 inline const std::vector<std::wstring>& kIchidan() {
     static const std::vector<std::wstring> data = {
         L"たべる|食べる",
@@ -1317,14 +1303,13 @@ inline const std::vector<std::wstring>& kIchidan() {
         L"ゆれる|揺れる",
         L"よごれる|汚れる",
         L"われる|割れる",
-        L"わすれる|忘れる",
         L"おぼれる|溺れる",
         L"くずれる|崩れる",
     };
     return data;
 }
 
-// I_ADJ: 70 件
+// I_ADJ: 69 件
 inline const std::vector<std::wstring>& kIAdj() {
     static const std::vector<std::wstring> data = {
         L"たかい|高い",
@@ -1387,7 +1372,6 @@ inline const std::vector<std::wstring>& kIAdj() {
         L"かたい|硬い",
         L"やわらかい|柔らかい",
         L"するどい|鋭い",
-        L"まるい|丸い",
         L"しかくい|四角い",
         L"ほしい|欲しい",
         L"うらやましい|羨ましい",
@@ -1401,7 +1385,7 @@ inline const std::vector<std::wstring>& kIAdj() {
     return data;
 }
 
-// NA_ADJ: 47 件
+// NA_ADJ: 46 件
 inline const std::vector<std::wstring>& kNaAdj() {
     static const std::vector<std::wstring> data = {
         L"しずか|静か",
@@ -1447,7 +1431,6 @@ inline const std::vector<std::wstring>& kNaAdj() {
         L"ゆうこう|友好",
         L"てきたい|敵対",
         L"へいわ|平和",
-        L"あんてい|安定",
         L"きんちょう|緊張",
         L"りらっくす|リラックス",
         L"すとれす|ストレス",

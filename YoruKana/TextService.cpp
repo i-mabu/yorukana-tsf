@@ -506,8 +506,13 @@ HRESULT CTextService::HandleEditSession(TfEditCookie ec, ITfContext* pContext,
                                     : CurrentReading());
             case KeyActionType::CommitCandidate:
                 if (_converting && _activeTab == ActiveTab::Predict) {
+                    // 数字キーは表示中ページ内の番号 (0 始まり) で来るため、
+                    // ページ開始位置を加えて絶対インデックスに直す
+                    // (クリック経路は CandidateWindow が絶対値で渡してくる)。
                     return DoCommitPrediction(
-                        ec, pContext, static_cast<size_t>(action.candidateIndex));
+                        ec, pContext,
+                        _candidateWindow.PageStart() +
+                            static_cast<size_t>(action.candidateIndex));
                 }
                 if (_converting && action.candidateIndex >= 0 &&
                     static_cast<size_t>(action.candidateIndex) < _candidates.size()) {

@@ -16,7 +16,7 @@ DictionaryData.kt -> DictionaryData.h 機械変換スクリプト
      の6つの arrayOf(...) リテラルを抽出する。
   2. C++ ヘッダ (UTF-8 / L"..." ワイド文字列の std::vector<std::wstring>) として書き出す。
   3. Dictionary.kt と同じ活用生成ロジックを Python で再現し、
-     登録される「読み」の総数を数えて表示する (Android 版の公称値 3,502 と照合するため)。
+     登録される「読み」の総数を数えて表示する (Android 版の公称値 3,408 と照合するため)。
 """
 import os
 import re
@@ -86,7 +86,6 @@ def count_readings(data) -> int:
         add(rs + row[0] + "ます")
         add(rs + row[0] + "ました")
         add(rs + row[0] + "たい")
-        add(rs + row[0] + "た")
         if reading == "いく":
             add("いった"); add("いって")
         else:

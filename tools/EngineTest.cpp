@@ -2,8 +2,9 @@
 // 変換エンジン (RomajiConverter / KanaUtils / Dictionary / ConversionEngine) の
 // 動作テスト。開発機で g++ -std=c++17 -I YoruKana tools/EngineTest.cpp
 // YoruKana/RomajiConverter.cpp YoruKana/KanaUtils.cpp YoruKana/Dictionary.cpp
-// YoruKana/ConversionEngine.cpp -o EngineTest のようにビルドして確認した。
-// (辞書読み数 3502 と主要変換の一致をチェックする。Windows では実行不要)
+// YoruKana/ConversionEngine.cpp YoruKana/Learning.cpp -o EngineTest
+// のようにビルドして確認した。
+// (辞書読み数 3408 と主要変換の一致をチェックする。Windows では実行不要)
 // エンジン移植の動作テスト (Linux g++ / wchar_t=UTF-32 でもロジックは同一に動く)
 #include <cstdio>
 #include <string>
@@ -89,7 +90,7 @@ int main() {
     // 辞書
     Dictionary dict;
     printf("Dictionary size: %zu\n", dict.Size());
-    ExpectTrue("dict size == 3502", dict.Size() == 3502);
+    ExpectTrue("dict size == 3408", dict.Size() == 3408);
     ExpectTrue("lookup kanji", Contains(dict.Lookup(L"かんじ"), L"漢字"));
     ExpectTrue("godan masu", Contains(dict.Lookup(L"かきます"), L"書きます"));
     ExpectTrue("godan ta", Contains(dict.Lookup(L"およいだ"), L"泳いだ"));

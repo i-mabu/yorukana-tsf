@@ -4,7 +4,7 @@
 
 namespace YoruKana {
 
-// ===== 1. ローマ字→ひらがな変換 (Android版 RomajiConverter.java の移植) =====
+// ===== 1. ローマ字→ひらがな変換 (Android版 RomajiConverter.kt の移植) =====
 // composing 入力途中の未確定ローマ字も扱う: 変換済み部分 (kana) と
 // まだ確定できない末尾ローマ字 (pending) を分けて返す。
 class RomajiConverter {

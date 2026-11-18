@@ -106,7 +106,6 @@ void Dictionary::GenGodan(const std::wstring& reading, const std::wstring& kanji
     Add(rs + row[0] + L"ます", ks + row[0] + L"ます");       // ます形
     Add(rs + row[0] + L"ました", ks + row[0] + L"ました");   // ました
     Add(rs + row[0] + L"たい", ks + row[0] + L"たい");       // たい
-    Add(rs + row[0] + L"た", ks + row[0] + L"た");           // 連用 (た の前段)
     std::wstring taR, teR, taK, teK;
     if (reading == L"いく") { // 行く は例外 (いった/いって)
         taR = L"いった"; teR = L"いって"; taK = L"行った"; teK = L"行って";

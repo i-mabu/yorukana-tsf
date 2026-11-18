@@ -39,6 +39,11 @@ public:
     void SetSelection(size_t selected);
     void Hide();
     bool IsVisible() const { return _hwnd != nullptr && ::IsWindowVisible(_hwnd); }
+    // 現在表示中のページの先頭候補の絶対インデックス
+    // (数字キーによるページ内番号指定を絶対位置へ直すために使う)。
+    size_t PageStart() const {
+        return (_selected == kNoSelection) ? 0 : (_selected / kPageSize) * kPageSize;
+    }
 
     // クリックで候補が選ばれたときのコールバック (候補の絶対インデックス)。
     std::function<void(size_t)> OnItemClicked;
@@ -53,9 +58,6 @@ private:
 
     static constexpr size_t kPageSize = 9;
 
-    size_t PageStart() const {
-        return (_selected == kNoSelection) ? 0 : (_selected / kPageSize) * kPageSize;
-    }
     size_t PageCount() const {
         return (_items.size() + kPageSize - 1) / kPageSize;
     }
