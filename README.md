@@ -8,6 +8,10 @@ Android版「よるかな IME」の変換エンジンと辞書をそのままに
 > あなたの Windows PC で Visual Studio 2022 を使ってビルドしてください。手順は **BUILD.md**。
 > コードは TSF の公開仕様に基づくオリジナル実装で、**実機 (Windows) でのビルド・動作確認は未実施**です。
 
+## 設計原則（手動型）
+
+yorukana は「自動で変換しない・自動で判定しない」手動型の IME です。変換の開始は Space、確定は Enter / 候補クリックなどの明示操作だけです。予測は表示されますが、確定には操作が必要です。詳しくは [MANUAL-INPUT-DESIGN.md](MANUAL-INPUT-DESIGN.md) を参照してください。
+
 ## 動作仕様 (v1.2)
 
 - **ローマ字入力のみ** (かな入力の12キーは未実装)
@@ -42,7 +46,7 @@ Android版 (`~/workspace/yorukana-ime/`) の純ロジックを C++ に移植:
 | ConversionEngine.h/.cpp | ConversionEngine.kt | 候補生成 (辞書→カタカナ→ひらがな→ローマ字)、末尾助詞の簡易分離、前方一致予測 |
 | Learning.h/.cpp | (Android版の学習相当) | (読み, 候補) の選択頻度を数え、候補を頻度順に並び替える |
 
-辞書の読み総数は **3,502** (Android版と一致を生成スクリプトで確認済み)。
+辞書の読み総数は **3,408** (Android版と一致を生成スクリプトで確認済み)。
 
 `DictionaryData.h` の再生成:
 
