@@ -37,14 +37,14 @@ yorukana は「自動で変換しない・自動で判定しない」手動型�
 
 Android版 (`~/workspace/yorukana-ime/`) の純ロジックを C++ に移植:
 
-| C++ | 移植元 (Kotlin) | 内容 |
-|---|---|---|
-| RomajiConverter.h/.cpp | RomajiConverter.kt | ローマ字→ひらがな (促音・撥音・拗音・外来音、未確定 pending 処理) |
-| KanaUtils.h/.cpp | KanaUtils.kt | ひらがな⇔カタカナ変換 |
-| Dictionary.h/.cpp | Dictionary.kt | 辞書＋動詞・形容詞の活用形生成 |
-| DictionaryData.h | DictionaryData.kt | 辞書データ (機械生成。手で編集しない) |
-| ConversionEngine.h/.cpp | ConversionEngine.kt | 候補生成 (辞書→カタカナ→ひらがな→ローマ字)、末尾助詞の簡易分離、前方一致予測 |
-| Learning.h/.cpp | (Android版の学習相当) | (読み, 候補) の選択頻度を数え、候補を頻度順に並び替える |
+| C++                     | 移植元 (Kotlin)       | 内容                                                                         |
+| ----------------------- | --------------------- | ---------------------------------------------------------------------------- |
+| RomajiConverter.h/.cpp  | RomajiConverter.kt    | ローマ字→ひらがな (促音・撥音・拗音・外来音、未確定 pending 処理)            |
+| KanaUtils.h/.cpp        | KanaUtils.kt          | ひらがな⇔カタカナ変換                                                        |
+| Dictionary.h/.cpp       | Dictionary.kt         | 辞書＋動詞・形容詞の活用形生成                                               |
+| DictionaryData.h        | DictionaryData.kt     | 辞書データ (機械生成。手で編集しない)                                        |
+| ConversionEngine.h/.cpp | ConversionEngine.kt   | 候補生成 (辞書→カタカナ→ひらがな→ローマ字)、末尾助詞の簡易分離、前方一致予測 |
+| Learning.h/.cpp         | (Android版の学習相当) | (読み, 候補) の選択頻度を数え、候補を頻度順に並び替える                      |
 
 辞書の読み総数は **3,408** (Android版と一致を生成スクリプトで確認済み)。
 
@@ -86,12 +86,12 @@ yorukana-tsf/
 
 ## GUID 一覧
 
-| 名前 | GUID | 用途 |
-|---|---|---|
-| CLSID_TextService | `{C92E270A-B54B-4B7B-BE78-EA19726076A7}` | テキストサービスの CLSID (COM登録・TSF登録の要) |
-| GUID_Profile | `{8E31A292-BAE5-48DC-B15D-938B785B9B71}` | 言語プロファイル (ja-JP, 0x0411) |
+| 名前                       | GUID                                     | 用途                                            |
+| -------------------------- | ---------------------------------------- | ----------------------------------------------- |
+| CLSID_TextService          | `{C92E270A-B54B-4B7B-BE78-EA19726076A7}` | テキストサービスの CLSID (COM登録・TSF登録の要) |
+| GUID_Profile               | `{8E31A292-BAE5-48DC-B15D-938B785B9B71}` | 言語プロファイル (ja-JP, 0x0411)                |
 | GUID_DisplayAttributeInput | `{09805E7C-7737-49C2-9A8D-DD22BC8FF2FC}` | 予約 (v1 未使用。将来の composition 表示属性用) |
-| プロジェクト GUID | `{D037F994-1323-4830-A18B-835DFFD0EEC9}` | .sln / .vcxproj 用 |
+| プロジェクト GUID          | `{D037F994-1323-4830-A18B-835DFFD0EEC9}` | .sln / .vcxproj 用                              |
 
 TIP 名は「よるかな」、プロファイル説明は「よるかな (ローマ字入力)」、
 カテゴリは `GUID_TFCAT_TIP_KEYBOARD` で登録します。
