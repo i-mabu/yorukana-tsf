@@ -8,11 +8,11 @@ Android版「よるかな IME」の変換エンジンと辞書をそのままに
 > あなたの Windows PC で Visual Studio 2022 を使ってビルドしてください。手順は **BUILD.md**。
 > コードは TSF の公開仕様に基づくオリジナル実装で、**実機 (Windows) でのビルド・動作確認は未実施**です。
 
-## 設計原則（手動型）
+## 📋 設計原則（手動型）
 
 yorukana は「自動で変換しない・自動で判定しない」手動型の IME です。変換の開始は Space、確定は Enter / 候補クリックなどの明示操作だけです。予測は表示されますが、確定には操作が必要です。詳しくは [MANUAL-INPUT-DESIGN.md](MANUAL-INPUT-DESIGN.md) を参照してください。
 
-## 動作仕様 (v1.2)
+## 📋 動作仕様 (v1.2)
 
 - **ローマ字入力のみ** (かな入力の12キーは未実装)
 - 英字キーを打つと composition (未確定文字列) としてひらがなが表示される
@@ -33,7 +33,7 @@ yorukana は「自動で変換しない・自動で判定しない」手動型�
 - IME の有効/無効の切替は Windows 標準の **Win+Space** に委ねる
   (DLL は有効になっている間つねに日本語入力として振る舞う)
 
-## 変換エンジン
+## ⚙️ 変換エンジン
 
 Android版 (`~/workspace/yorukana-ime/`) の純ロジックを C++ に移植:
 
@@ -56,7 +56,7 @@ python tools\generate_dictionary_data.py
 
 (入力: Android版の DictionaryData.kt / 出力: YoruKana\DictionaryData.h。件数も表示されます)
 
-## ファイル構成
+## 📁 ファイル構成
 
 ```
 yorukana-tsf/
@@ -84,7 +84,7 @@ yorukana-tsf/
                                   DictionaryData.h / ConversionEngine / Learning
 ```
 
-## GUID 一覧
+## 📝 GUID 一覧
 
 | 名前                       | GUID                                     | 用途                                            |
 | -------------------------- | ---------------------------------------- | ----------------------------------------------- |
@@ -96,7 +96,7 @@ yorukana-tsf/
 TIP 名は「よるかな」、プロファイル説明は「よるかな (ローマ字入力)」、
 カテゴリは `GUID_TFCAT_TIP_KEYBOARD` で登録します。
 
-## 実装している TSF インターフェース
+## ⚙️ 実装している TSF インターフェース
 
 - `ITfTextInputProcessorEx` (ActivateEx / Deactivate)
 - `ITfThreadMgrEventSink` (フォーカス変化で TextEditSink を付け替え)
@@ -104,7 +104,7 @@ TIP 名は「よるかな」、プロファイル説明は「よるかな (ロ�
 - `ITfKeyEventSink` (OnTestKeyDown/Up で消費判定、OnKeyDown で編集セッション起動)
 - `ITfCompositionSink` (OnCompositionTerminated で状態を片付け)
 
-## 既知の制限 (v1.2)
+## 📋 既知の制限 (v1.2)
 
 - 候補ウィンドウは自前描画ポップアップ (ITfCandidateListUIElement ではない)。
   入力位置が取得できないホストではキャレット位置に表示する
@@ -119,20 +119,11 @@ TIP 名は「よるかな」、プロファイル説明は「よるかな (ロ�
 - composition の表示属性 (下線の色・太さ) はカスタマイズしていない
 - 実機未検証: ビルドエラーや登録の不具合が残っている可能性がある (BUILD.md の確認ポイント参照)
 
-## 今後の課題
+## 📝 今後の課題
 
 - 入力途中の予測候補の表示 (Predict の UI 連携)
 - ITfCandidateListUIElement への移行、表示属性 (ITfDisplayAttributeProvider)
 - かな入力、←→での文節/カーソル移動
 - ARM64 構成の追加
 
-## 変更履歴
-
-- **v1.2**: 予測タブを追加 (変換中は Tab で [変換]/[予測] 切替、入力中も予測を
-  クリック確定可能)。確定した文字がアプリ側で選択状態のまま残る問題を修正
-  (確定前に選択範囲を末尾へ畳む)。候補ウィンドウにページ表示を追加
-- **v1.1**: 候補ウィンドウ (自前描画ポップアップ、クリック選択・↑↓/Tab 移動) と
-  学習機能 (%APPDATA%\YoruKana\learning.txt に永続化) を追加。
-  フォーカス移動時は表示中の内容で確定するよう改善。全コード精査で
-  候補ウィンドウの生成まわりの不具合等を修正
-- **v1.0**: 初版 (ローマ字入力＋Space 変換＋数字キー選択のみ)
+変更履歴は [CHANGELOG.md](CHANGELOG.md) を参照してください。
