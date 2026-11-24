@@ -1,5 +1,7 @@
 # よるかな IME (TSF版) for Windows
 
+> 📦 **このリポジトリは [i-mabu/yorukana-ime](https://github.com/i-mabu/yorukana-ime) に統合されました。** 今後の開発は yorukana-ime の `windows-tsf/` フォルダで行います。このリポジトリはアーカイブされます。
+
 Android版「よるかな IME」の変換エンジンと辞書をそのままに、Windows の
 **本物のシステムIME (TSF: Text Services Framework)** として実装した C++ プロジェクトです。
 メモ帳でもブラウザでも、Windows の通常の入力欄でそのまま使える形式 (DLL) になります。
